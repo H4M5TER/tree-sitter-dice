@@ -1,0 +1,26 @@
+{
+  "name": "tree-sitter-dice",
+  "version": "0.1.0",
+  "main": "bindings/node",
+  "author": "H4M5TER <zhuxx2003@gmail.com>",
+  "repository": "github:H4M5TER/tree-sitter-dice",
+  "license": "MIT",
+  "homepage": "https://github.com/H4M5TER/tree-sitter-dice",
+  "bugs": "https://github.com/H4M5TER/tree-sitter-dice/issues",
+  "keywords": [
+    "parser",
+    "lexer",
+    "trpg",
+    "dice"
+  ],
+  "dependencies": {
+    "nan": "^2.14.2"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.0",
+    "node-gyp": "^8.1.0"
+  },
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp configure && node-gyp build"
+  }
+}
