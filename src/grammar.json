@@ -8,15 +8,19 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "CHOICE",
+              "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_expression"
+                  "type": "FIELD",
+                  "name": "repeat",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_expression"
+                  }
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "repeat_operator"
+                  "type": "STRING",
+                  "value": "#"
                 }
               ]
             },
@@ -29,8 +33,28 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "comment"
+              "type": "FIELD",
+              "name": "main",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_expression"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "comment",
+              "content": {
+                "type": "SYMBOL",
+                "name": "comment"
+              }
             },
             {
               "type": "BLANK"
@@ -77,7 +101,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": ".+"
+        "value": "[^\\d+\\-*\\/x#dkbp].*"
       }
     },
     "operator": {

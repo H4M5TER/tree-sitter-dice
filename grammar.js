@@ -3,12 +3,13 @@ module.exports = grammar({
   rules: {
     source: $ =>
       seq(
-        optional(choice($._expression, $.repeat_operator)),
-        optional($.comment)
+        optional(seq(field('repeat', $._expression), '#')),
+        optional(field('main', $._expression)),
+        optional(field('comment', $.comment))
       ),
     _expression: $ => choice($.number, $._dice, $.operator),
     repeat_operator: $ => seq($._expression, '#', $._expression),
-    comment: $ => token(/.+/),
+    comment: $ => token(/[^\d+\-*\/x#dkbp].*/),
     operator: $ =>
       choice(
         prec.left(1, seq($._expression, choice('+', '-'), $._expression)),
