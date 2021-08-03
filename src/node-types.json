@@ -99,11 +99,11 @@
     }
   },
   {
-    "type": "source",
+    "type": "repeat_operator",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -130,6 +130,49 @@
     }
   },
   {
+    "type": "source",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bonus_dice",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "dice",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "operator",
+          "named": true
+        },
+        {
+          "type": "penalty_dice",
+          "named": true
+        },
+        {
+          "type": "repeat_operator",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
     "type": "*",
     "named": false
   },
@@ -148,6 +191,10 @@
   {
     "type": "b",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "d",
