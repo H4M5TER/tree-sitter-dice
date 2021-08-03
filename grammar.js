@@ -14,7 +14,7 @@ module.exports = grammar({
         prec.left(1, seq($._expression, choice('+', '-'), $._expression)),
         prec.left(2, seq($._expression, choice('*', 'x', '/'), $._expression))
       ),
-    _dice: $ => choice($.dice, $.bonus_dice, $.penalty_dice),
+    _dice: $ => choice($.dice, $.coc_extra_dice),
     dice: $ =>
       seq(
         optional(field('quanity', $.number)),
@@ -23,8 +23,8 @@ module.exports = grammar({
         'k',
         optional(field('keep', $.number))
       ),
-    bonus_dice: $ => seq('b', optional(field('quanity', $.number))),
-    penalty_dice: $ => seq('p', optional(field('quanity', $.number))),
+    coc_extra_dice: $ =>
+      seq(choice('b', 'p'), optional(field('quanity', $.number))),
     number: $ => /\d+/,
   },
 })

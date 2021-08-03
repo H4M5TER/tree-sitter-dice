@@ -158,11 +158,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "bonus_dice"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "penalty_dice"
+          "name": "coc_extra_dice"
         }
       ]
     },
@@ -227,37 +223,21 @@
         }
       ]
     },
-    "bonus_dice": {
+    "coc_extra_dice": {
       "type": "SEQ",
       "members": [
-        {
-          "type": "STRING",
-          "value": "b"
-        },
         {
           "type": "CHOICE",
           "members": [
             {
-              "type": "FIELD",
-              "name": "quanity",
-              "content": {
-                "type": "SYMBOL",
-                "name": "number"
-              }
+              "type": "STRING",
+              "value": "b"
             },
             {
-              "type": "BLANK"
+              "type": "STRING",
+              "value": "p"
             }
           ]
-        }
-      ]
-    },
-    "penalty_dice": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "p"
         },
         {
           "type": "CHOICE",
