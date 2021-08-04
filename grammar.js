@@ -9,7 +9,7 @@ module.exports = grammar({
       ),
     _expression: $ => choice($.number, $._dice, $.operator),
     repeat_operator: $ => seq($._expression, '#', $._expression),
-    comment: $ => token(/[^\d+\-*\/x#dkbp].*/),
+    comment: $ => token(/[^\s\d+\-*\/x#dkbp].*/),
     operator: $ =>
       choice(
         prec.left(1, seq($._expression, choice('+', '-'), $._expression)),

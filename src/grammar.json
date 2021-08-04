@@ -101,7 +101,7 @@
       "type": "TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^\\d+\\-*\\/x#dkbp].*"
+        "value": "[^\\s\\d+\\-*\\/x#dkbp].*"
       }
     },
     "operator": {
