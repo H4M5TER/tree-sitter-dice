@@ -17,19 +17,12 @@ module.exports = grammar({
       ),
     _dice: $ => choice($.dice, $.coc_extra_dice),
     dice: $ =>
-      choice(
-        seq(
-          optional(field('quanity', $.number)),
-          'd',
-          optional(field('faces', $.number))
-        ),
-        seq(
-          field('quanity', $.number),
-          'd',
-          optional(field('faces', $.number)),
-          'k',
-          optional(field('keep', $.number))
-        )
+      seq(
+        optional(field('quanity', $.number)),
+        'd',
+        optional(field('faces', $.number)),
+        'k',
+        optional(field('keep', $.number))
       ),
     coc_extra_dice: $ =>
       seq(choice('b', 'p'), optional(field('quanity', $.number))),
