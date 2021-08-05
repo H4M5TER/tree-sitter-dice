@@ -2,4 +2,16 @@
 
 [![npm](https://img.shields.io/npm/v/tree-sitter-dice)](https://www.npmjs.com/package/tree-sitter-dice)
 
-骰子的 tree-sitter 语法，基本上是按照[这里](https://v2docs.kokona.tech/zh/latest/User_Manual.html#r)来的
+Dice syntax and parser created by [tree-sitter](https://github.com/tree-sitter/tree-sitter).
+
+## Usage
+
+Check [node-tree-sitter](https://github.com/tree-sitter/node-tree-sitter).
+
+## Syntax
+
+Check <https://v2docs.kokona.tech/zh/latest/User_Manual.html#r>
+
+## Modify
+
+Check [The Grammar DSL](https://tree-sitter.github.io/tree-sitter/creating-parsers#the-grammar-dsl)
