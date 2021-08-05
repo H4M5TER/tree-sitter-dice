@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-dice",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "bindings/node",
   "author": "H4M5TER <zhuxx2003@gmail.com>",
   "repository": "github:H4M5TER/tree-sitter-dice",
