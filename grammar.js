@@ -8,7 +8,6 @@ module.exports = grammar({
         optional(field('comment', $.comment))
       ),
     _expression: $ => choice($.number, $._dice, $.operator),
-    repeat_operator: $ => seq($._expression, '#', $._expression),
     comment: $ => token(/[^\s\d+\-*\/x#dkbp].*/),
     operator: $ =>
       choice(
@@ -21,8 +20,7 @@ module.exports = grammar({
         optional(field('quanity', $.number)),
         'd',
         optional(field('faces', $.number)),
-        'k',
-        optional(field('keep', $.number))
+        optional(seq('k', optional(field('keep', $.number))))
       ),
     coc_extra_dice: $ =>
       seq(choice('b', 'p'), optional(field('quanity', $.number))),
