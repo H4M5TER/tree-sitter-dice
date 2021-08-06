@@ -40,10 +40,9 @@ jobs:
               sha: context.sha
             })
       - name: Prebuild
-        run: |
+        run: | # node-gyp 不支持交叉编译(#829) 要把不同机器 build 好的的汇总起来发布又很麻烦 如果用 prebuild 而不是 prebuildify 上传到 github 又有网络问题 还是只 build linux 好了
           npm i nan
           npm i prebuildify node-gyp -g
-          prebuildify -t 12.0.0 -t 14.0.0 -t 16.0.0 --arch x64 --platform win32 --strip
           prebuildify -t 12.0.0 -t 14.0.0 -t 16.0.0 --arch x64 --platform linux --strip
       - name: Publish
         run: |
