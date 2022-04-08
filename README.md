@@ -15,3 +15,7 @@ Check <https://v2docs.kokona.tech/zh/latest/User_Manual.html#r>
 ## Modify
 
 Check [The Grammar DSL](https://tree-sitter.github.io/tree-sitter/creating-parsers#the-grammar-dsl)
+
+## Compile
+
+Check [Tree-sitter CLI](http://tree-sitter.github.io/tree-sitter/creating-parsers#tool-overview)

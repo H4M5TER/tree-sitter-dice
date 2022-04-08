@@ -14,14 +14,14 @@
     "dice"
   ],
   "dependencies": {
-    "nan": "^2.14.2",
-    "node-gyp-build": "^4.2.3"
+    "nan": "^2.15.0",
+    "node-gyp-build": "^4.4.0"
   },
-  "devDependencies": {
-    "tree-sitter-cli": "^0.20.0"
+  "peerDependencies": {
+    "tree-sitter": "^0.20.0"
   },
   "scripts": {
-    "build": "tree-sitter generate && node-gyp rebuild",
+    "build": "tree-sitter generate && node-gyp rebuild --verbose",
     "install": "node-gyp-build"
   }
 }
